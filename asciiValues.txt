@@ -1,0 +1,145 @@
+ASCII Character Table (Standard ASCII: 0-127)
+==============================================
+Useful for DOS assembly: compare with AL using CMP AL, xxh
+
+Dec  Hex   Character / Name
+---  ----  ------------------
+  0  00h   NUL  (null)
+  1  01h   SOH  (start of heading)
+  2  02h   STX  (start of text)
+  3  03h   ETX  (end of text)
+  4  04h   EOT  (end of transmission)
+  5  05h   ENQ  (enquiry)
+  6  06h   ACK  (acknowledge)
+  7  07h   BEL  (bell)
+  8  08h   BS   (backspace)
+  9  09h   TAB  (horizontal tab)
+ 10  0Ah   LF   (line feed / newline)
+ 11  0Bh   VT   (vertical tab)
+ 12  0Ch   FF   (form feed)
+ 13  0Dh   CR   (carriage return / Enter key)
+ 14  0Eh   SO   (shift out)
+ 15  0Fh   SI   (shift in)
+ 16  10h   DLE  (data link escape)
+ 17  11h   DC1  (device control 1)
+ 18  12h   DC2  (device control 2)
+ 19  13h   DC3  (device control 3)
+ 20  14h   DC4  (device control 4)
+ 21  15h   NAK  (negative acknowledge)
+ 22  16h   SYN  (synchronous idle)
+ 23  17h   ETB  (end of transmission block)
+ 24  18h   CAN  (cancel)
+ 25  19h   EM   (end of medium)
+ 26  1Ah   SUB  (substitute)
+ 27  1Bh   ESC  (escape)
+ 28  1Ch   FS   (file separator)
+ 29  1Dh   GS   (group separator)
+ 30  1Eh   RS   (record separator)
+ 31  1Fh   US   (unit separator)
+
+ 32  20h   ' '  (space)
+ 33  21h   '!'
+ 34  22h   '"'
+ 35  23h   '#'
+ 36  24h   '$'
+ 37  25h   '%'
+ 38  26h   '&'
+ 39  27h   '''
+ 40  28h   '('
+ 41  29h   ')'
+ 42  2Ah   '*'
+ 43  2Bh   '+'
+ 44  2Ch   ','
+ 45  2Dh   '-'
+ 46  2Eh   '.'
+ 47  2Fh   '/'
+ 48  30h   '0'
+ 49  31h   '1'
+ 50  32h   '2'
+ 51  33h   '3'
+ 52  34h   '4'
+ 53  35h   '5'
+ 54  36h   '6'
+ 55  37h   '7'
+ 56  38h   '8'
+ 57  39h   '9'
+ 58  3Ah   ':'
+ 59  3Bh   ';'
+ 60  3Ch   '<'
+ 61  3Dh   '='
+ 62  3Eh   '>'
+ 63  3Fh   '?'
+ 64  40h   '@'
+ 65  41h   'A'
+ 66  42h   'B'
+ 67  43h   'C'
+ 68  44h   'D'
+ 69  45h   'E'
+ 70  46h   'F'
+ 71  47h   'G'
+ 72  48h   'H'
+ 73  49h   'I'
+ 74  4Ah   'J'
+ 75  4Bh   'K'
+ 76  4Ch   'L'
+ 77  4Dh   'M'
+ 78  4Eh   'N'
+ 79  4Fh   'O'
+ 80  50h   'P'
+ 81  51h   'Q'
+ 82  52h   'R'
+ 83  53h   'S'
+ 84  54h   'T'
+ 85  55h   'U'
+ 86  56h   'V'
+ 87  57h   'W'
+ 88  58h   'X'
+ 89  59h   'Y'
+ 90  5Ah   'Z'
+ 91  5Bh   '['
+ 92  5Ch   '\'
+ 93  5Dh   ']'
+ 94  5Eh   '^'
+ 95  5Fh   '_'
+ 96  60h   '`'
+ 97  61h   'a'
+ 98  62h   'b'
+ 99  63h   'c'
+100  64h   'd'
+101  65h   'e'
+102  66h   'f'
+103  67h   'g'
+104  68h   'h'
+105  69h   'i'
+106  6Ah   'j'
+107  6Bh   'k'
+108  6Ch   'l'
+109  6Dh   'm'
+110  6Eh   'n'
+111  6Fh   'o'
+112  70h   'p'
+113  71h   'q'
+114  72h   'r'
+115  73h   's'
+116  74h   't'
+117  75h   'u'
+118  76h   'v'
+119  77h   'w'
+120  78h   'x'
+121  79h   'y'
+122  7Ah   'z'
+123  7Bh   '{'
+124  7Ch   '|'
+125  7Dh   '}'
+126  7Eh   '~'
+127  7Fh   DEL  (delete)
+
+Quick reference for your programs:
+----------------------------------
+  Space key  -> 20h  (32)   used in readUntilSpaceKeyPressed.asm
+  Enter key  -> 0Dh  (13)   used in countCharacter.asm
+  Tab        -> 09h  (9)
+  Backspace  -> 08h  (8)
+  '0'-'9'    -> 30h-39h (48-57)
+  'A'-'Z'    -> 41h-5Ah (65-90)
+  'a'-'z'    -> 61h-7Ah (97-122)
