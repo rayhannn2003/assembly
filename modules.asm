@@ -605,3 +605,70 @@
 ; COUNT_VALUE_IN_ARRAY ENDP
 ;
 
+
+; ================================================================
+; MODULE: Leap year detection (function / procedure)
+;
+; Rules:
+;   Leap if divisible by 4
+;   NOT leap if divisible by 100
+;   Leap again if divisible by 400
+;
+; Examples: 2024=leap, 2000=leap, 1900=not leap, 2023=not leap
+;
+; Input:  AX = year (e.g. 2024)
+; Output: AL = 1 if leap year, AL = 0 if not
+;
+; Usage in MAIN:
+;    MOV AX, 2024
+;    CALL IS_LEAP_YEAR       ; AL = 1 or 0
+; ================================================================
+;
+; IS_LEAP_YEAR PROC
+;     PUSH BX
+;     PUSH CX
+;     PUSH DX
+;
+;     MOV CX, AX               ; CX keeps year (AX changes after DIV)
+;
+;     ; year % 400 == 0 ?
+;     MOV AX, CX
+;     XOR DX, DX
+;     MOV BX, 400
+;     DIV BX
+;     CMP DX, 0
+;     JE  LY_YES
+;
+;     ; year % 100 == 0 ?
+;     MOV AX, CX
+;     XOR DX, DX
+;     MOV BX, 100
+;     DIV BX
+;     CMP DX, 0
+;     JE  LY_NO
+;
+;     ; year % 4 == 0 ?
+;     MOV AX, CX
+;     XOR DX, DX
+;     MOV BX, 4
+;     DIV BX
+;     CMP DX, 0
+;     JE  LY_YES
+;
+;     JMP LY_NO
+;
+; LY_YES:
+;     MOV AL, 1
+;     JMP LY_DONE
+;
+; LY_NO:
+;     MOV AL, 0
+;
+; LY_DONE:
+;     POP DX
+;     POP CX
+;     POP BX
+;     RET
+; IS_LEAP_YEAR ENDP
+;
+
